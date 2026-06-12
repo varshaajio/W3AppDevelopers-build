@@ -1,0 +1,317 @@
+Continue improving the existing W3AppDevelopers MERN CMS project.
+
+IMPORTANT RULES:
+
+* Do NOT rebuild existing modules
+* Do NOT redesign architecture
+* Do NOT generate fake or placeholder data
+* Do NOT use “empty”, “0”, or fallback UI values in admin dashboard
+* Make only minimal and incremental updates
+* Keep Replit credit usage optimized
+
+====================================================
+📌 1. FOOTER UPDATE (CRITICAL)
+==============================
+
+Replace ALL hardcoded email values:
+
+❌ REMOVE:
+[info@w3appdevelopers.com](mailto:info@w3appdevelopers.com)
+
+✅ USE:
+process.env.PRIMARY_EMAIL
+
+Ensure footer displays:
+
+* PRIMARY_EMAIL only from environment variables
+* No static or fallback email values anywhere in UI
+
+====================================================
+🗺️ 2. GOOGLE MAPS UPDATE
+=========================
+
+Update Google Maps integration using:
+
+VITE_GOOGLE_MAPS_API_KEY
+
+Requirements:
+
+* Replace any old or missing map API setup
+* Ensure map loads correctly in Contact page
+* Do NOT over-engineer map system
+* Use simple embed or lightweight API integration
+
+====================================================
+📊 3. ADMIN DASHBOARD DATA FIX(IMPORTANT)
+==============================
+
+Current issue:
+Dashboard shows “empty” or “0” values for:
+
+* Blogs
+* Products
+* Services
+* Pages
+
+Fix by:
+
+* Correctly fetching counts from MongoDB collections, if available, if not, update my MongoDB database with appropriate dashboard information and update admin panel
+* Ensuring API endpoints return real counts
+* Remove fake/empty fallback values
+
+Keep existing structure:
+
+Dashboard modules:
+
+* Dashboard
+* Clients
+* Leads
+* Projects
+* Services
+* Products
+* Blogs
+* Settings
+
+Do NOT redesign dashboard UI.
+
+Only fix data binding and real counts.
+
+====================================================
+🔗 4. SOCIAL MEDIA LINKS FIX
+============================
+
+Update icons:
+
+* Instagram
+* LinkedIn
+* YouTube
+
+Rules:
+
+* Currently links point nowhere → FIX THIS
+* Use placeholder URLs only if real ones are not provided
+* Ensure they are clickable and valid
+
+====================================================
+📧 5. EMAIL NOTIFICATIONS SYSTEM (NODEMAILER)
+=============================================
+
+Ensure email notifications are sent using SMTP:
+
+Primary sender:
+
+* SMTP_EMAIL (via Nodemailer)
+
+Forward emails to:
+
+* PRIMARY_EMAIL
+* SECONDARY_EMAIL
+* ADMIN_EMAIL
+
+Also send WhatsApp notification if system supports it:
+
+* Send acknowledgment to client number (if WhatsApp integration exists)
+
+Notifications must include:
+
+* New Contact Form submission
+* Service update
+* Product update
+* Admin alerts
+
+RULES:
+
+* Do NOT create complex notification infrastructure
+* Keep logic lightweight
+* Use existing Nodemailer service only
+* No Firebase FCM or external systems
+
+====================================================
+⚡ PERFORMANCE RULES
+===================
+
+* Minimal file changes only
+* No full project rebuild
+* No dependency bloat
+* No redundant API calls
+* Keep changes isolated and stable
+===================================================
+Continue improving the existing W3AppDevelopers MERN CMS project.
+
+IMPORTANT RULES:
+
+* Do NOT redesign database architecture
+* Do NOT create new frameworks
+* Do NOT overengineer schema system
+* Use MongoDB + Mongoose only
+* Keep changes lightweight and incremental
+* Only add/extend required collections
+
+====================================================
+🎯 MAIN TASK
+============
+
+Create and store structured MongoDB schema models based on the following JSON structure.
+
+This is ONLY schema definition + collection setup task.
+
+====================================================
+📦 1. USERS COLLECTION
+======================
+
+Store:
+
+* Name
+* Email
+* Phone
+* Password (hashed)
+* Role (admin/student/staff)
+* Login history (timestamps + IP optional)
+
+Collection: users
+
+====================================================
+📦 2. CORE CMS COLLECTIONS
+==========================
+
+Create collections:
+
+* clients
+* contact_enquiries
+* service_requests
+* project_requests
+* payments
+* support_tickets
+* notifications
+* quotations
+* subscriptions
+* activity_logs
+
+Keep schema lightweight and consistent.
+
+====================================================
+📩 3. CONTACT ENQUIRIES
+=======================
+
+Collection: contact_enquiries
+
+Store:
+
+* Name
+* Phone
+* Email
+* Message
+* Date/time (auto timestamp)
+* Follow-up status (default: pending)
+
+====================================================
+💳 4. PAYMENTS (RAZORPAY)
+=========================
+
+Collection: payments
+
+Store:
+
+* Transaction ID
+* Amount
+* Payment method
+* Invoice ID
+* Payment date
+* Status (success/pending/failed)
+
+====================================================
+📁 5. ASSETS / DOCUMENTS (ASSET MANAGER MODULE)
+===============================================
+
+Collection: assets
+
+Store:
+
+* Asset name
+* Asset type
+* Assigned user
+* Uploaded file URLs
+* Warranty details
+* Purchase details
+* Created timestamp
+
+====================================================
+🧾 6. ADMIN ACTIVITY LOGS
+=========================
+
+Collection: activity_logs
+
+Store:
+
+* User ID
+* Action type (login/update/delete/create)
+* Module name
+* Timestamp
+* IP address (optional)
+
+====================================================
+📝 7. BLOG CMS DATA
+===================
+
+Collection: blogs
+
+Store:
+
+* Blog title
+* Slug
+* Meta description
+* Content (HTML allowed)
+* Tags (array)
+* Featured image URL
+* Created date
+* Updated date
+
+====================================================
+📊 8. WEBSITE ANALYTICS (LIGHTWEIGHT)
+=====================================
+
+Collection: analytics
+
+Store:
+
+* Visitor count
+* Form submissions count
+* Device type (optional)
+* Location (optional)
+* Timestamp
+
+====================================================
+⚡ IMPLEMENTATION RULES
+======================
+
+* Use MongoDB + Mongoose only
+* Do NOT introduce SQL or external DB
+* Do NOT over-normalize schema
+* Keep schema simple and scalable
+* Use timestamps: true where applicable
+* Avoid unnecessary nested complexity
+
+====================================================
+🚀 FINAL EXPECTATION
+====================
+
+After implementation:
+
+* All CMS data is properly structured in MongoDB
+* No missing collections
+* Lightweight schema design
+* Ready for production use in MERN stack
+
+
+====================================================
+🚀 FINAL EXPECTATION
+====================
+
+After update:
+
+* Footer uses process.env.PRIMARY_EMAIL only
+* Google Maps works using VITE_GOOGLE_MAPS_API_KEY
+* Admin dashboard shows real MongoDB counts
+* Social media icons are functional
+* Email system sends to all required recipients
+* System remains lightweight and production-ready

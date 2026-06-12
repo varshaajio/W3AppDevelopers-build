@@ -1,0 +1,197 @@
+Continue improving the existing W3AppDevelopers MERN CMS project.
+
+IMPORTANT RULES:
+
+* DO NOT overengineer
+* DO NOT rebuild architecture
+* DO NOT generate AI content
+* DO NOT modify UI theme (keep orange theme intact)
+* DO NOT add heavy backend systems
+* DO NOT implement full Razorpay/Firebase/analytics systems now
+* Make only incremental updates
+* Modify existing files only
+
+====================================================
+🎯 MAIN TASK (LIGHTWEIGHT UPDATE)
+=================================
+
+Use uploaded assets ONLY:
+
+* hero-image.png → homepage hero section
+* desproser.png → services/products section visuals
+* counter-img.png → stats/counter section design reference
+
+====================================================
+🏠 HOMEPAGE UPDATE (CONTENT + STRUCTURE)
+========================================
+
+Update homepage sections using provided content structure:
+
+Include:
+
+* Leading Web Design Company in Erode
+* Trusted and Professional Website Designers in Erode
+* Reach More Customers
+* We Don’t Just Build Websites, We Build Brands
+* Let’s Build Your Dream Website
+* Don’t Blend In, Stand Out
+
+Services section:
+
+* Our Exciting & Inspiring Web Design Services
+* Our Range of Web Design Services
+
+Technologies section:
+
+* Technologies We Use for Website Design
+
+CTA section:
+
+* Let’s Get In Touch (use secret keys for contact info only)
+
+Counter section:
+Use counter-img.png as reference for animation layout:
+
+* Projects
+* Clients
+* Satisfaction %
+
+IMPORTANT:
+
+* Do NOT change orange theme
+* Do NOT redesign layout completely
+* Only enhance content + spacing + image placement
+
+====================================================
+📌 SERVICES SECTION UPDATE (IMPORTANT)
+======================================
+
+* Use uploaded service HTML files as source of truth
+* Replace ONLY service page content
+* DO NOT generate AI content
+* DO NOT modify text beyond HTML files
+* Keep routing unchanged
+
+====================================================
+📦 PRODUCTS + SERVICES EXPANSION
+================================
+
+* Add additional services/products ONLY if missing in current UI
+* Use desproser.png as visual reference for category layout
+* If new items added:
+
+  * use placeholder content ONLY until HTML mapping exists
+  * DO NOT generate marketing text
+
+====================================================
+🔐 CONTACT INFO SYNC (CRITICAL)
+===============================
+
+Replace ALL hardcoded values:
+
+* Email → process.env.PRIMARY_EMAIL
+* Secondary Email → process.env.SECONDARY_EMAIL
+* Phones → PRIMARY_PHONE, SECONDARY_PHONE
+* Addresses → ADDRESS, BRANCH_OFFICE_ADDRESS
+
+IMPORTANT:
+
+* Remove any instance of [info@w3appdevelopers.com](mailto:info@w3appdevelopers.com)
+* Ensure footer + contact page + header all use secrets
+
+====================================================
+💬 SOCIAL LINKS
+===============
+
+Add links to icons:
+
+* LinkedIn
+* Instagram
+* YouTube
+
+Only UI linking (no backend)
+
+====================================================
+📧 NOTIFICATION SYSTEM (LIGHTWEIGHT ONLY)
+=========================================
+
+Use Nodemailer ONLY for:
+
+* New Contact Form
+* Service update alert
+* Product update alert
+* User login alert (optional)
+
+Send emails to:
+
+* SMTP_EMAIL
+* PRIMARY_EMAIL
+* SECONDARY_EMAIL
+
+DO NOT:
+
+* build full notification infrastructure
+* use Firebase FCM (skip for now)
+* use WhatsApp API backend
+
+====================================================
+🧠 ADMIN DASHBOARD UPDATE (MINIMAL)
+===================================
+
+Keep existing structure and optionally ensure:
+
+* Dashboard
+* Clients
+* Leads
+* Projects
+* Services
+* Products
+* Blogs
+* Settings
+
+Add only if already partially implemented:
+
+* auto logout after inactivity (simple timeout session)
+
+DO NOT add full CRM/ERP system.
+
+====================================================
+🗺️ IMAGE USAGE RULES
+=====================
+
+* hero-image.png → homepage hero only
+* desproser.png → service/product section visuals
+* counter-img.png → stats section animation design
+
+DO NOT:
+
+* regenerate images
+* modify images
+* replace with external assets
+
+====================================================
+⚡ PERFORMANCE RULES (CRITICAL FOR REPLIT)
+=========================================
+
+* Avoid full project rebuild
+* Avoid heavy dependency installation
+* Avoid loops or recursive logic
+* Keep updates incremental
+* Update only necessary components
+
+====================================================
+🚀 FINAL EXPECTATION
+====================
+
+After implementation:
+
+* Homepage updated with provided content structure
+* Services mapped from HTML files correctly
+* Products/services visually improved using assets
+* Contact info fully synced with secrets
+* Footer fully dynamic
+* Admin dashboard stable
+* No Firebase/Razorpay/analytics overload
+* System remains lightweight and Replit-credit optimized
+* resemble all features of website w3appdevelopers.com
+You MUST ask for clarification before making assumptions and/or need requirements.

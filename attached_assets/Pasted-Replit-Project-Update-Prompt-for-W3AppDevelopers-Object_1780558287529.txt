@@ -1,0 +1,40 @@
+Replit Project Update Prompt for W3AppDevelopers
+
+Objectives:
+
+Admin Dashboard Updates:
+Include existing blogs in the admin dashboard and database. Currently, only new blogs appear ("Additional blog posts will appear here once published from the admin panel") and dashboard status shows 0.
+Implement a sync mechanism to export and import all existing blogs into the database so they are visible in the dashboard.
+Ensure all modules are present:
+Dashboard, Clients, Leads, Projects, Services, Products, Blogs, Settings
+Google Maps Integration:
+Use the API key stored in Replit secrets to integrate Google Maps on relevant pages.
+Typography:
+Use a modern, professional serif font across the website.
+Service Pages:
+Create pages for the following services (existing services pages are already created) using the content of the html files i uploaded:
+Ecommerce Development
+Software Development
+AI Agent Development
+WordPress Development
+SaaS Development
+Update pages for the following blogs in "blogs" section based on the contents of html files i uploaded:
+Digital Advertising
+Digital Graphics
+Application Innovation
+Web Programming
+Menu & Footer Updates:
+Include Services, Products, and Blogs menus in the footer.
+Ensure Services menu appears in header navbar as well.
+Append the contents of the file "Internships.html" on "Careers" section.
+Tawk.to Chat Integration:
+Add the following Tawk.to script and ensure it does not overlap the existing WhatsApp icon:
+<!--Start of Tawk.to Script--> <script type="text/javascript"> var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); (function(){ var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0]; s1.async=true; s1.src='https://embed.tawk.to/6a2122076d77da1c401dcde3/1jq8mprk2'; s1.charset='UTF-8'; s1.setAttribute('crossorigin','*'); s0.parentNode.insertBefore(s1,s0); })(); </script> <!--End of Tawk.to Script-->
+Local Development:
+Ensure the app can run locally using:
+pnpm install
+pnpm run dev
+Cleanup:
+Remove any redundant or unnecessary files that are not required for the project.
+Blog Sync Implementation:
+Ensure that after running this sync, the admin dashboard correctly shows the count of all blogs.

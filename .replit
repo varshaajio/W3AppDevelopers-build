@@ -1,0 +1,123 @@
+modules = ["web", "nodejs-20", "bash"]
+
+[deployment]
+router = "application"
+deploymentTarget = "autoscale"
+
+[deployment.postBuild]
+args = ["pnpm", "store", "prune"]
+env = { "CI" = "true" }
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "API Server"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "API Server"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT=8080 pnpm --filter @workspace/api-server run dev"
+waitForPort = 8080
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "PORT=20282 BASE_PATH=/ pnpm --filter @workspace/w3app run dev"
+waitForPort = 20282
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[agent]
+stack = "BEST_EFFORT_FALLBACK"
+expertMode = true
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 20000
+
+[[ports]]
+localPort = 3000
+externalPort = 3001
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
+
+[[ports]]
+localPort = 8081
+externalPort = 80
+
+[[ports]]
+localPort = 8082
+externalPort = 3002
+
+[[ports]]
+localPort = 20282
+externalPort = 3000
+
+[nix]
+channel = "stable-25_05"
+packages = ["psmisc"]
+
+[userenv]
+
+[userenv.shared]
+NODE_ENV = "development"
+VITE_ADDRESS_BRANCH = "28/8, Sarayakkaran Thottam, Kalliyampudur Road, Perundurai, Erode – 638052"
+VITE_ADDRESS_MAIN = "332, Mullamparappu, N.G. Palayam Post, Erode – 638115"
+VITE_CONTACT_EMAIL = "digital@w3appdevelopers.com"
+VITE_CONTACT_EMAIL_2 = "ceo@w3appdevelopers.com"
+VITE_INSTAGRAM = "https://www.instagram.com/w3appdevelopers"
+VITE_LINKEDIN = "https://www.linkedin.com/company/w3appdevelopers"
+VITE_PHONE_1 = "+91 9698548633"
+VITE_PHONE_2 = "+91 9025010144"
+VITE_WHATSAPP = "919698548633"
+VITE_YOUTUBE = "https://www.youtube.com/@w3appdevelopers"
+RUN = "pnpm install && pnpm run dev"
+SITE_NAME = "W3AppDevelopers"
+SITE_URL = "https://w3appdevelopers.com"
+SMTP_HOST = "smtp.gmail.com"
+SMTP_PORT = "587"
+PRIMARY_PHONE = "+91 9698548633"
+WHATSAPP_NUMBER = "+91 9698548633"
+ADDRESS = "332, Mullamparappu, N.G. Palayam Post, Erode – 638115"
+BRANCH_OFFICE_ADDRESS = "28/8, Sarayakkaran Thottam, Kalliyampudur Road, Perundurai, Erode – 638052"
+SECONDARY_PHONE = "+91 9025010144"
+CONTACT_EMAIL = "digital@w3appdevelopers.com"
+PRIMARY_EMAIL = "digital@w3appdevelopers.com"
+SECONDARY_EMAIL = "ceo@w3appdevelopers.com"
+TERTIARY_EMAIL = "admin@w3appdevelopers.com"
+WHATSAPP_LINK = "https://wa.me/919698548633"
+TAWK_PROPERTY_ID = "67f3be3fa3f62d190bbf93f1"
+TAWK_WIDGET_ID = "1io9lm2ba"
+INSTAGRAM_URL = "https://www.instagram.com/w3appdevelopers/"
+LINKEDIN_URL = "https://www.linkedin.com/in/mentorboopathikumar/"
+YOUTUBE_URL = "http://www.youtube.com/@W3AppDevelopers"
+CLIENT_URL = "http://localhost:3000"
+WEBSITE_URL = "https://w3appdevelopers.com"
+ADMIN_USERNAME = "admin"
