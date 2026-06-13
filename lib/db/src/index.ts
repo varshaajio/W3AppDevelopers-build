@@ -3,6 +3,7 @@ import pg from "pg";
 import * as schema from "./schema";
 import "dotenv/config";
 
+
 const { Pool } = pg;
 
 if (!process.env.DATABASE_URL) {

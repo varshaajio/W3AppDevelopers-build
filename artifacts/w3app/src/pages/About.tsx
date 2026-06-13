@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2 } from "lucide-react";
-import logo from "@assets/Untitled-Design-1_1779262940868.jpg";
+
 
 export default function About() {
   return (
@@ -39,7 +39,7 @@ export default function About() {
               <div className="relative">
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-primary/5 flex items-center justify-center border border-primary/10 shadow-lg">
                   <img
-                    src={logo}
+                    src="https://w3appdevelopers.com/wp-content/uploads/2026/03/Untitled-Design-1.jpg"
                     alt="W3AppDevelopers Logo"
                     className="w-2/3 object-contain"
                   />

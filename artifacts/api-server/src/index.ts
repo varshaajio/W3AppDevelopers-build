@@ -2,6 +2,7 @@ import app from "./app";
 import { logger } from "./lib/logger";
 import { seedAll } from "./lib/seedAll";
 
+
 const rawPort = process.env["PORT"];
 
 if (!rawPort) {

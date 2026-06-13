@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 
+
 const SMTP_HOST = process.env.SMTP_HOST ?? "smtp.gmail.com";
 const SMTP_PORT = parseInt(process.env.SMTP_PORT ?? "587", 10);
 const SMTP_EMAIL = process.env.SMTP_EMAIL;
@@ -10,6 +11,7 @@ const SECONDARY_EMAIL = process.env.SECONDARY_EMAIL ?? "";
 const SITE_NAME = process.env.SITE_NAME ?? "W3AppDevelopers";
 const SITE_URL = process.env.SITE_URL ?? "https://w3appdevelopers.com";
 const PRIMARY_PHONE = process.env.PRIMARY_PHONE ?? "+91 96985 48633";
+
 
 function createTransporter() {
   if (!SMTP_EMAIL || !SMTP_PASSWORD) {
@@ -27,7 +29,7 @@ function createTransporter() {
 }
 
 function getAdminRecipients(): string {
-  const recipients = [ADMIN_EMAIL, PRIMARY_EMAIL, SECONDARY_EMAIL]
+  const recipients = [SMTP_EMAIL, ADMIN_EMAIL, PRIMARY_EMAIL, SECONDARY_EMAIL]
     .filter(Boolean)
     .filter((v, i, arr) => arr.indexOf(v) === i);
   if (recipients.length === 0) {
@@ -51,10 +53,10 @@ export async function sendAdminNotification(contact: ContactPayload): Promise<vo
   await transporter.sendMail({
     from: `"${SITE_NAME}" <${SMTP_EMAIL}>`,
     to: recipients,
-    subject: `New Contact Form Submission - ${SITE_NAME}`,
+    subject: `New Customer Inquiry regarding - ${SITE_NAME} - Contact form`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e5e7eb; border-radius: 8px;">
-        <h2 style="color: #FF6028; margin-top: 0;">New Contact Form Submission</h2>
+        <h2 style="color: #FF6028; margin-top: 0;">New Contact Form Submission - Inquiry regarding - ${SITE_NAME}</h2>
         <table style="width: 100%; border-collapse: collapse;">
           <tr><td style="padding: 8px 0; color: #6b7280; width: 120px;"><strong>Name</strong></td><td style="padding: 8px 0;">${contact.name}</td></tr>
           <tr><td style="padding: 8px 0; color: #6b7280;"><strong>Email</strong></td><td style="padding: 8px 0;"><a href="mailto:${contact.email}" style="color: #FF6028;">${contact.email}</a></td></tr>
@@ -81,8 +83,12 @@ export async function sendUserAutoReply(contact: ContactPayload): Promise<void> 
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e5e7eb; border-radius: 8px;">
         <div style="text-align: center; margin-bottom: 24px;">
-          <h1 style="color: #FF6028; margin: 0;">W3</h1>
-          <p style="color: #6b7280; margin: 4px 0 0;">App Developers</p>
+          <img
+                  src="https://w3appdevelopers.com/wp-content/uploads/2026/03/Untitled-Design-1.jpg"
+                  alt="W3AppDevelopers Logo"
+                  className="h-10 w-auto"
+                  style="height: 80px; width: auto;"
+                />
         </div>
         <h2 style="color: #111827;">Thank you for reaching out, ${contact.name}!</h2>
         <p style="color: #4b5563; line-height: 1.6;">

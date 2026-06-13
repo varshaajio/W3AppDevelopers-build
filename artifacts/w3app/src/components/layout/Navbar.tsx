@@ -17,7 +17,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "@assets/Untitled-Design-1_1779212117854.jpg";
+
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -131,7 +131,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <img
-            src={logo}
+            src="https://w3appdevelopers.com/wp-content/uploads/2026/03/Untitled-Design-1.jpg"
             alt="W3AppDevelopers Logo"
             className="h-12 w-auto object-contain"
           />

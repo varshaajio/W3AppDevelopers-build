@@ -8,7 +8,7 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
-import logo from "@assets/Untitled-Design-1_1779212117854.jpg";
+
 
 const PRIMARY_EMAIL =
   import.meta.env.VITE_PRIMARY_EMAIL || "digital@w3appdevelopers.com";
@@ -41,7 +41,7 @@ export function Footer() {
             <Link href="/" className="inline-block mb-4">
               <div className="bg-white p-2 rounded inline-flex">
                 <img
-                  src={logo}
+                  src="https://w3appdevelopers.com/wp-content/uploads/2026/03/Untitled-Design-1.jpg"
                   alt="W3AppDevelopers Logo"
                   className="h-10 w-auto"
                 />
